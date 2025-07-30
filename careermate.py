@@ -60,6 +60,17 @@ COURSES = {
 # --- Tools ---
 @function_tool
 def get_missing_skills(user_skills: List[str], target_job: str) -> dict:
+    """
+    Identify missing skills by comparing the user's current skills with 
+    the required skills for a given target job.
+
+    Args:
+        user_skills (List[str]): The skills the user already has.
+        target_job (str): The job title the user is aiming for.
+
+    Returns:
+        dict: A dictionary containing the target job, missing skills, and an explanation.
+    """
     required_skills = JOB_SKILLS.get(target_job.lower())
     if not required_skills:
         return {"error": f"No data for job: {target_job}"}
@@ -70,8 +81,20 @@ def get_missing_skills(user_skills: List[str], target_job: str) -> dict:
         "explanation": f"To become a {target_job}, you need to learn: {', '.join(missing)}"
     }
 
+
 @function_tool
 def find_jobs(user_skills: List[str], location: Optional[str] = None) -> List[dict]:
+    """
+    Find job listings that match the user's current skills.
+    Optionally filter jobs by location.
+
+    Args:
+        user_skills (List[str]): A list of skills the user possesses.
+        location (Optional[str]): (Optional) Preferred job location.
+
+    Returns:
+        List[dict]: A list of matching job dictionaries.
+    """
     matches = []
     for job in JOB_LISTINGS:
         if all(skill in user_skills for skill in job["skills"]):
@@ -80,8 +103,18 @@ def find_jobs(user_skills: List[str], location: Optional[str] = None) -> List[di
             matches.append(job)
     return matches
 
+
 @function_tool
 def recommend_courses(missing_skills: List[str]) -> List[dict]:
+    """
+    Recommend online courses to help the user learn missing skills.
+
+    Args:
+        missing_skills (List[str]): A list of skills the user needs to learn.
+
+    Returns:
+        List[dict]: A list of dictionaries, each containing a skill and recommended courses.
+    """
     recommendations = []
     for skill in missing_skills:
         courses = COURSES.get(skill)
