@@ -58,9 +58,9 @@ careermate/
 
   <li>Create a <code>.env</code> file in the root folder with the following:</li>
   <pre><code>
-BASE_URL=https://api.openai.com/v1
-API_KEY=your-openai-api-key
-MODEL_NAME=gpt-4o
+BASE_URL= "https://models.github.ai/inference/v1"
+API_KEY= "your-openai-api-key-here"
+MODEL_NAME= "openai/gpt-4.1-nano"
   </code></pre>
 
   <li>Run the script</li>
