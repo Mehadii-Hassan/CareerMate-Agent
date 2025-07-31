@@ -1,4 +1,4 @@
-<h1 align="center">🎯 CareerMate: Your Personal AI Career Assistant</h1>
+<h1 align="center">🎯 CareerMate Agent</h1>
 
 <p align="center">
   <strong>Identify skill gaps, find job opportunities, and get course recommendations with AI Agents.</strong><br>
