@@ -14,7 +14,7 @@ CareerMate is an intelligent career-planning assistant built using a multi-agent
 </p>
 
 <ul>
-  <li>🔍 <strong>Skill Gap Specialist</strong>: Finds missing skills for a given job</li>
+  <li>🔍 <strong>Skill Gap Specialist</strong>: Finds missing skills for a given job </li>
   <li>💼 <strong>Job Finder Specialist</strong>: Suggests jobs based on current skills and location</li>
   <li>📚 <strong>Course Recommender Specialist</strong>: Recommends courses to fill skill gaps</li>
 </ul>
